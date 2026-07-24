@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getApiHealth } from "./api/health"
+import { AppRoutes } from "./routes/AppRoutes";
 
 function App() {
   const [status, setStatus] = useState("Checking API...");
@@ -22,17 +23,7 @@ function App() {
     checkApi();
   }, []);
 
-  return (
-    <main>
-      <h1>Pokémon Research Terminal</h1>
-
-      {error ? (
-        <p role="alert">{error}</p>
-      ) : (
-        <p>{status}</p>
-      )}
-    </main>
-  );
+  return <AppRoutes />
 }
 
 export default App;
